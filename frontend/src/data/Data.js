@@ -1,0 +1,42 @@
+export const items = [
+    {
+        id: "1",
+        name: "carrot cake",
+        description: "home made here",
+        price: "2.50",
+        category: "cake",
+        available: "no",
+    },
+    {
+        id: "2",
+        name: "sandwiches",
+        description: "with a variety of fillings",
+        price: "2.50",
+        category: "snack",
+        available: "no",
+    },
+    {
+        id: "3",
+        name: "salad",
+        description: "uses seasonal local produce",
+        price: "3.50",
+        category: "side",
+        available: "yes",
+    },
+    {
+        id: "4",
+        name: "hot chocolate",
+        description: "with fully fat or skimmed milk",
+        price: "2.00",
+        category: "drinks",
+        available: "yes",
+    },
+    {
+        id: "5",
+        name: "chocolate cake",
+        description: "with cream",
+        price: "2.50",
+        category: "cake",
+        available: "yes",
+    },
+]
