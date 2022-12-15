@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 //import MenuItems from "./MenuItems";
-import Search from "./Search";
+//import Search from "./Search";
+import Search from "./Search.tsx";
+import "../style/style.css"
 
 const FetchData = ({ }) => {
     const [foods, setFoods] = useState([{
@@ -27,7 +29,7 @@ const FetchData = ({ }) => {
     
     return (
         <div>
-            <h2>Menu</h2>
+            <h2 id="menu">Menu</h2>
             <Search details={foods} />
         </div>
     );
