@@ -34,3 +34,10 @@ exports.addOrder = function (req, res) {
   });
   res.redirect("/");
 };
+
+exports.updateRatings = function (req, res) {
+  //console.log(req.body)
+  menu.updateRatings(req.body.id, req.body.name, req.body.description, req.body.price, req.body._id, req.body.category, req.body.ingredients, req.body.recipe, req.body.serving, req.body.original, req.body.ratings);
+  
+  res.redirect('back');
+}

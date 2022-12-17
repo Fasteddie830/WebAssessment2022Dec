@@ -6,18 +6,14 @@ import Accordion from 'react-bootstrap/Accordion';
 import FetchData from "./FetchNutrition";
 import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
+import UpdateRatings from "./UpdateRating";
+import "../style/style.css"
+import mean from "./Mymath";
 
-/* useEffect(()=> {
-    const localItems = JSON.parse(localStorage.getItem("item"));
-    if (localItems){
-        setLocalItems(localItems)
-    }
-})
- */
+
 const MenuItems = ({ items }) => {
 
     let stored;
-
     if (localStorage.getItem('item') !== null) {
         stored = JSON.parse(localStorage.getItem('item'))
         console.log(stored)
@@ -27,22 +23,6 @@ const MenuItems = ({ items }) => {
     }
 
     const [selectedItems, setSelectedItems] = useState(stored);
-
-    /* if(localStorage.getItem('item')){
-        let item = localStorage.getItem('item')
-    }
-    else{
-        stored = []
-    } */
-
-    /* useEffect(() => {
-        if(localStorage.getItem('item')){
-            let item = localStorage.getItem('item')
-            setSelectedItems(item)
-        }
-    }) */
-
-    //console.log(localStorage.getItem("items") == null)
 
     const handleClick = (e, selectedItem) => {
         let newState = [...selectedItems, selectedItem];
@@ -56,16 +36,11 @@ const MenuItems = ({ items }) => {
         }
     }, [selectedItems]);
 
-    const mean = (x) => {
-        let total = 0;
-        let count = 0
-        for (let i in x) {
-            count++;
-            total = total + x[i];
-        }
-        return total / count
-    }
+    
 
+    const handleSubmit = () => {
+
+    }
 
 
     return (
@@ -75,19 +50,18 @@ const MenuItems = ({ items }) => {
                     <Accordion.Item eventKey={index} key={index} >
                         <div className="card">
                             <div className="card-body" >
-                                <Accordion.Header key={item.id}>{item.name}</Accordion.Header>
+                                <Accordion.Header key={item.id}><Typography component="legend">{item.name}</Typography>
+                                        <Rating name="read-only" value={mean(item.ratings)} readOnly size="small" /></Accordion.Header>
                                 <Accordion.Body>
                                     <h6 className="card-subtitle mb-2 text-muted">£{item.price}</h6>
-                                    <p className="card-text" style={{ whiteSpace: 'pre-wrap' }} >Description: {item.description}</p>
-                                    <p className="card-text" style={{ whiteSpace: 'pre-wrap' }} >Ingredients: {item.ingredients}</p>
-                                    <p className="card-text" style={{ whiteSpace: 'pre-wrap' }} >Recipe: {item.recipe}</p>
-                                    <p className="card-text" style={{ whiteSpace: 'pre-wrap' }} >Serving: {item.serving}</p>
-                                    <p className="card-text" style={{ whiteSpace: 'pre-wrap' }} >Rating: {mean(item.ratings)}, "rounded: {Math.round(mean(item.ratings))}"</p>
-                                    <p className="card-text" style={{ whiteSpace: 'pre-wrap' }} >Rating:
-                                        <Typography component="legend">Read only</Typography>
-                                        <Rating name="read-only" value={mean(item.ratings)} readOnly /></p>
+                                    <p className="card-text">Description: {item.description}</p>
+                                    <p className="card-text">Ingredients: {item.ingredients}</p>
+                                    <p className="card-text">Recipe: {item.recipe}</p>
+                                    <p className="card-text">Serving: {item.serving}</p>
+                                    <UpdateRatings rating={item}></UpdateRatings>
+                                    <p className="card-text" ></p> 
                                     <FetchData query={item.name}></FetchData>
-                                    <button onClick={(e) => handleClick(e, item)}>Add to cart</button>
+                                    <button onClick={(e) => handleClick(e, item)}>Add to Bookmarks</button>
                                 </Accordion.Body>
                             </div>
                         </div>

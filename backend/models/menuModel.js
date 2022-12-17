@@ -4,9 +4,9 @@ function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-function getRandomTen(){
+function getRandomTen() {
   let numberlist = []
-  for(let i = 0; i< 10; i++){
+  for (let i = 0; i < 10; i++) {
     numberlist.push(Math.round(getRandomArbitrary(1, 5)))
   }
   return numberlist;
@@ -23,11 +23,11 @@ class Menu {
       this.menu = new nedb();
     }
   }
-  
+
   init() {
     this.menu.insert({
       id: "1",
-      name: "carrot cake",
+      name: "Carrot cake",
       description: "home made here",
       price: "2.50",
       category: "cake",
@@ -88,7 +88,7 @@ class Menu {
     });
     this.menu.insert({
       id: "5",
-      name: "chocolate cake",
+      name: "Chocolate cake",
       description: "happy birthday",
       price: "2.50",
       category: "cake",
@@ -110,7 +110,7 @@ class Menu {
     });
     this.menu.insert({
       id: "6",
-      name: "broccoli soup",
+      name: "Broccoli soup",
       description: "Creamy and healty broccoli soup, no cream",
       price: "1.50",
       category: "soup",
@@ -135,5 +135,57 @@ class Menu {
       });
     });
   }
+
+ /*  updateRatings(_id, ratings, callback) {
+
+    console.log(_id);
+
+    this.menu.update(
+      { _id: _id },
+      {
+        $set:
+        {
+          ratings: ratings
+        }
+      },
+      
+      {},
+      function (err, numReplaced) {
+        console.log("replaced: " + numReplaced);
+      }
+    );
+    this.menu.find({}).exec(function (err, docs) { console.log(docs); });
+    //console.log(this.db.find({dish: "Pizza"})) //testing
+  } */
+  updateRatings(id, name, description, price, _id, category, ingredients, recipe, serving, original, ratings, callback) {
+
+    this.menu.update(
+      { _id: _id },
+      {
+        $set:
+        {
+          id: id,
+          name: name, 
+          description: description,
+          price: price,
+          category: category,
+          ingredients: ingredients,
+          recipe: recipe,
+          serving: serving,
+          original: original,
+          ratings: ratings
+        }
+      },
+
+      {},
+      function (err, numReplaced) {
+        console.log("replaced: " + numReplaced);
+      }
+    );
+    this.db.find({}).exec(function (err, docs) { console.log(docs); });
+    //console.log(this.db.find({dish: "Pizza"})) //testing
+  } 
+
+
 }
 module.exports = Menu;

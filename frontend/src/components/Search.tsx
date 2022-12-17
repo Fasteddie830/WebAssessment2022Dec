@@ -38,14 +38,14 @@ function Search({ details }) {
 
     return (
         <div>
-            <div>
+            <div id="search">
                 <input className="form-control"
                     type="text"
                     placeholder="Search ..."
                     onChange={(e) => setSearchField(e.target.value)}>
                 </input>
             </div>
-            <form>
+            <form id="filter">
             <label>Filter By: &emsp;</label>
                 <label>Name:
                     <input
