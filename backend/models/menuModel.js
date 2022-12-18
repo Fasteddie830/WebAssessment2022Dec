@@ -127,6 +127,90 @@ class Menu {
       image: "https://itsnotcomplicatedrecipes.com/wp-content/uploads/2021/01/potato-broccoli-soup3.jpg",
       ratings: getRandomTen()
     });
+    this.menu.insert({
+      id: "7",
+      name: "Campfire Stew",
+      description: "Enjoy this easy stew made with gammon and plenty of veg its full of goodness, delivering four of your five-a-day, and can also be cooked in a slow cooker",
+      category: "main",
+      ingredients: "600g gammon, 1 tbsp vegetable oil, 2 onions, roughly chopped, 2 carrots, chopped, 1 celery stick, chopped, 2 peppers, deseeded and chopped, 3 garlic cloves, crushed, 1 tbsp tomato purée, 2 tsp smoked paprika, ½ tsp chilli powder (optional), 2 x 400g cans chopped tomatoes, 1 tbsp Worcestershire sauce, 2 bay leaves, 2 x 400g cans haricot beans, drained and rinsed",
+      recipe: "STEP 1 \n Remove the rind and fat from the gammon, then soak in a pan of water in the fridge overnight  this will remove some of the salt.  STEP 2 \n Heat the oil in a large flameproof casserole or ovenproof pan over a medium-high heat and cook the onion, carrots and celery for 10 mins, stirring regularly until the veg starts to soften. Stir in the peppers, garlic, tomato purée, paprika and chilli powder. Cook for another 2 mins, then add the tomatoes and stir. Swill out the tomato cans with a little water and pour this into the casserole. Season well and stir in the Worcestershire sauce, 1 tbsp sugar and the bay leaves.  STEP 3 \n Heat the oven to 170C/150C fan/gas 3. Put the gammon in the casserole, cover and bring to a simmer. Transfer to the oven and cook for 3 hrs until the meat is tender. Carefully lift out the casserole and return to a medium heat on the hob, then add the haricot beans. Simmer for 10 mins until the beans are heated through, then shred the ham using two forks. Serve straightaway. To store, leave to cool completely and chill in an airtight container for up to three days, or freeze for up to two months. Defrost in the fridge overnight before reheating until piping hot.",
+      serving: "4",
+      original: "https://www.bbcgoodfood.com/recipes/campfire-stew",
+      image: "https://s23209.pcdn.co/wp-content/uploads/2020/03/Best-Ever-Beef-StewIMG_1367-600x900.jpg?p=31427",
+      ratings: getRandomTen()
+    });
+    this.menu.insert({
+      id: "8",
+      name: "Easy vegetarian chilli",
+      description: "Rustle up our easy vegetarian chilli. It's a great recipe for batch-cooking you can easily double it if you have a pan big enough, and freeze the rest",
+      category: "main",
+      ingredients: "2 tbsp vegetable oil, 2 carrots, finely chopped, 2 celery sticks, finely chopped, 2 onions, finely chopped, 2 tsp dried mixed herbs, 2 garlic cloves, crushed or finely grated, 1 red pepper, sliced, 1 green pepper, sliced, 2-3 tsp chilli powder (depending on how hot you like it), 2 tsp sweet smoked paprika, 2 tbsp tomato purée, 400g can red kidney beans, drained, 400g can black beans, drained, 2 x 400g cans chopped tomatoes, 400ml vegetable stock, cooked rice, grated cheddar and soured cream, to serve",
+      recipe: "STEP 1 \n Heat the oil in a large saucepan over a low-medium heat and fry the carrots, celery, onions and mixed herbs for 10-12 mins, stirring occasionally until the veg is soft but not golden. You may need to add a splash of water if the veg starts to catch. STEP 2 \n Stir in the garlic and both peppers, and cook for a further 5 mins until the peppers begin to soften. Sprinkle in the chilli powder and paprika, turn up the heat to medium, then stir and cook for 1 min. Mix in the tomato purée and cook for a further 1 min, then pour in all of the beans, the tomatoes and stock. STEP 3 \n Stir well, bring to the boil, then reduce the heat to a simmer. Cook for 25-35 mins until the beans are tender and the sauce has thickened. Serve with rice, grated cheddar and soured cream, if you like.",
+      serving: "6",
+      original: "https://www.bbcgoodfood.com/recipes/easy-vegetarian-chilli",
+      image: "https://www.wearesovegan.com/wp-content/uploads/2021/01/veganultimatechillirecipeh1.jpg",
+      ratings: getRandomTen()
+    });
+    this.menu.insert({
+      id: "9",
+      name: "One-pan spaghetti with nduja, fennel & olives",
+      description: "A spicy sausage pasta dish with a difference. Using the cooking water helps the sauce cling to the pasta and gives the dish more body. A silky smooth sauce, perfect pasta and one pan to wash!",
+      category: "main",
+      ingredients: "400g spaghetti, 3 garlic cloves, very thinly sliced, ½ fennel, halved and very thinly sliced, 75g nduja or sobrasada paste, 200g tomatoes (the best you can get), chopped into chunks, 75g black olives, pitted and sliced, 2 tsp tomato purée, 3 tbsp olive oil, plus a drizzle, 2 tsp red wine vinegar, 40g pecorino, plus extra to serve, handful basil, torn",
+      recipe: "STEP 1 \n Boil the kettle. Put all the ingredients except the pecorino and basil in a wide saucepan or deep frying pan and season well. Pour over 800ml kettle-hot water and bring to a simmer, using your tongs to ease the spaghetti under the liquid as it starts to soften. STEP 2 \n Simmer, uncovered, for 10-12 mins, tossing the spaghetti through the liquid every so often until it is cooked and the sauce is reduced and clinging to it. Add a splash more hot water if the sauce is too thick or does not cover the pasta while it cooks. Turn up the heat for the final few mins to drive off the excess liquid, leaving you with a rich sauce. Stir through the pecorino and basil, and serve with an extra drizzle of oil and pecorino on the side.",
+      serving: "6",
+      original: "https://www.bbcgoodfood.com/recipes/one-pan-spaghetti-nduja-fennel-olives",
+      image: "https://veganwithgusto.com/wp-content/uploads/2021/05/speedy-spaghetti-arrabbiata-featured-e1649949762421.jpg",
+      ratings: getRandomTen()
+    });
+    this.menu.insert({
+      id: "10",
+      name: "Teriyaki chicken",
+      description: "Try this easy, sticky Asian-style teriyaki chicken for a speedy weeknight supper it takes just 20 minutes to make! Serve it with sticky rice and steamed greens",
+      category: "main",
+      ingredients: "2 tbsp toasted sesame oil, 6 skinless and boneless chicken thighs, sliced, 2 large garlic cloves, crushed, 1 thumb-sized piece ginger, grated, 50g runny honey, 30ml light soy sauce, 1 tbsp rice wine vinegar, 1 tbsp sesame seeds, to serve, 4 spring onions, shredded, to serve, sticky rice, to serve, steamed bok choi or spring greens, to serve",
+      recipe: "STEP 1 \n Heat the oil in a non-stick pan over a medium heat. Add the chicken and fry for 7 mins, or until golden. Add the garlic and ginger and fry for 2 mins. Stir in the honey, soy sauce, vinegar and 100ml water. Bring to the boil and cook for 2 - 5 mins over a medium heat until the chicken is sticky and coated in a thick sauce. STEP 2 \n Scatter over the spring onions and sesame seeds, then serve the chicken with the rice and steamed veg.",
+      serving: "6",
+      original: "https://www.bbcgoodfood.com/recipes/easy-teriyaki-chicken",
+      image: "https://www.aheadofthyme.com/wp-content/uploads/2021/12/teriyaki-chicken-3.jpg",
+      ratings: getRandomTen()
+    });
+    /* this.menu.insert({
+      id: "11",
+      name: "Lorem Ipsum",
+      description: "Lorem ipsum",
+      category: "",
+      ingredients: "",
+      recipe: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      serving: "",
+      original: "",
+      image: "",
+      ratings: [0]
+    });
+    this.menu.insert({
+      id: "12",
+      name: "Lorem Ipsum",
+      description: "Lorem ipsum",
+      category: "",
+      ingredients: "",
+      recipe: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      serving: "",
+      original: "",
+      image: "",
+      ratings: [0]
+    });
+    this.menu.insert({
+      id: "13",
+      name: "Lorem Ipsum",
+      description: "Lorem ipsum",
+      category: "",
+      ingredients: "",
+      recipe: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      serving: "",
+      original: "",
+      image: "",
+      ratings: [0]
+    }); */
   }
 
   //return all entries into the console. 

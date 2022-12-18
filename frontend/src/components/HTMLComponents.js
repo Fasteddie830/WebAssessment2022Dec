@@ -18,7 +18,7 @@ export default function HTMLComponents() {
                         <li><a href="#top">Top</a></li>
                         <li><a href="#snap">Menu</a></li>
                         <li><a href="#bookmarks">Bookmarks</a></li>
-                        <li><a href="#footer">Shopping list</a></li>
+                        <li><a href="#footer">ShopList</a></li>
                     </ul>
                 </nav>
             </header>
