@@ -41,6 +41,7 @@ class Menu {
         + "as single cream. Put the cake on a serving plate and boldly drizzle the icing back and forth in diagonal lines over the top, letting it drip down the sides.",
       serving: "15",
       original: "https://www.bbcgoodfood.com/recipes/yummy-scrummy-carrot-cake-recipe",
+      image: "https://www.biggerbolderbaking.com/wp-content/uploads/2015/03/BBB62-Carrot-Cake-Thumbnail-FINAL-.jpg", //NeDB doesn't support image storing well, so i will just use external links. 
       ratings: getRandomTen()
     });
     this.menu.insert({
@@ -57,6 +58,7 @@ class Menu {
         + "them cooking and cool the shells quickly for peeling.",
       serving: "1",
       original: "https://www.bbcgoodfood.com/recipes/soft-boiled-eggs",
+      image: "https://www.culinaryhill.com/wp-content/uploads/2021/02/How-to-Soft-Boil-Eggs-Culinary-Hill-1200x800-1.jpg",
       ratings: getRandomTen()
     });
     this.menu.insert({
@@ -69,6 +71,7 @@ class Menu {
       recipe: "Place 4 large vine tomatoes, cut into wedges, 1 peeled, deseeded and chopped cucumber, ½ a thinly sliced red onion, 16 Kalamata olives, and 4 tbsp Greek extra virgin olive oil in a large bowl.",
       serving: "2",
       original: "https://www.bbcgoodfood.com/recipes/greek-salad",
+      image: "https://www.themediterraneandish.com/wp-content/uploads/2020/02/Greek-salad-recipe-3.jpg", 
       ratings: getRandomTen()
     });
     this.menu.insert({
@@ -84,6 +87,7 @@ class Menu {
         + "stirring occasionally, then stir continuously for the last few mins until all the liquid has evaporated and becomes sticky on the bottom of the pan. Tip cabbage into a large bowl and serve.",
       serving: "6",
       original: "https://www.bbcgoodfood.com/recipes/sticky-spiced-red-cabbage",
+      image: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-444463_12-b67dae6.jpg?quality=90&resize=440,400",
       ratings: getRandomTen()
     });
     this.menu.insert({
@@ -106,6 +110,7 @@ class Menu {
         + "   \n STEP 10   \n Now melt 25g milk chocolate and 25g white chocolate and drizzle them over the dark chocolate before it sets.   \n STEP 11   \n Shake the tray gently to level the mixture then leave to set somewhere cool. Chop into shards.",
       serving: "12",
       original: "https://www.bbcgoodfood.com/recipes/broccoli-soup-cheese-toasties",
+      image: "https://sallysbakingaddiction.com/wp-content/uploads/2013/04/triple-chocolate-cake-4.jpg",
       ratings: getRandomTen()
     });
     this.menu.insert({
@@ -119,6 +124,8 @@ class Menu {
         "then add the broccoli and some seasoning and cook for another 4-5 mins. Blend the soup until smooth, then return to the pan and keep warm while you make the toastie",
       serving: "4",
       original: "https://www.bbcgoodfood.com/recipes/broccoli-soup-cheese-toasties",
+      /* image: "https://cookieandkate.com/images/2020/03/broccoli-cheese-soup-recipe-3.jpg",  */
+      image: "https://itsnotcomplicatedrecipes.com/wp-content/uploads/2021/01/potato-broccoli-soup3.jpg",
       ratings: getRandomTen()
     });
   }
@@ -173,6 +180,7 @@ class Menu {
           recipe: recipe,
           serving: serving,
           original: original,
+          image: image,
           ratings: ratings
         }
       },

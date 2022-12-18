@@ -36,20 +36,15 @@ const MenuItems = ({ items }) => {
         }
     }, [selectedItems]);
 
-    
-
-    const handleSubmit = () => {
-
-    }
-
+    console.log(items.image)
 
     return (
         <>
-            <Accordion>
+            <Accordion style={{paddingTop: "15px"}}>
                 {items.map((item, index) => (
                     <Accordion.Item eventKey={index} key={index} >
                         <div className="card">
-                            <div className="card-body" >
+                            <div className="card-body" style={{backgroundImage: `url(${item.image})`}}>
                                 <Accordion.Header key={item.id}><Typography component="legend">{item.name}</Typography>
                                         <Rating name="read-only" value={mean(item.ratings)} readOnly size="small" /></Accordion.Header>
                                 <Accordion.Body>
@@ -57,11 +52,11 @@ const MenuItems = ({ items }) => {
                                     <p className="card-text">Description: {item.description}</p>
                                     <p className="card-text">Ingredients: {item.ingredients}</p>
                                     <p className="card-text">Recipe: {item.recipe}</p>
-                                    <p className="card-text">Serving: {item.serving}</p>
+                                    <p className="card-text" >Serving: {item.serving}</p>
                                     <UpdateRatings rating={item}></UpdateRatings>
                                     <p className="card-text" ></p> 
                                     <FetchData query={item.name}></FetchData>
-                                    <button onClick={(e) => handleClick(e, item)}>Add to Bookmarks</button>
+                                    <button id="addbookmark" onClick={(e) => handleClick(e, item)}>Add to Bookmarks</button>
                                 </Accordion.Body>
                             </div>
                         </div>

@@ -19,14 +19,14 @@ export default function OrderSummary() {
         setOrder(updatedOrder);
     };
     return (
-        <div>
+        <div id="bookmarks">
             <h2 id="order">Your Bookmarked Dishes</h2>
 
             <Accordion>
                 {order.map((item, index) => (
                     <Accordion.Item eventKey={index} key={index}>
                         <div className="card">
-                            <div className="card-body">
+                            <div className="card-body" style={{backgroundImage: `url(${item.image})`}}>
                             <Accordion.Header key={item.id}><Typography component="legend">{item.name}</Typography>
                                         <Rating name="read-only" value={mean(item.ratings)} readOnly size="small" /></Accordion.Header>
                                 <Accordion.Body>
@@ -40,7 +40,7 @@ export default function OrderSummary() {
                                     <p className="card-text" >Rating:</p>
                                     <UpdateRatings rating={item}></UpdateRatings>
                                     <FetchData query={item.name}></FetchData>
-                                    <button onClick={(e) => removeItem(e, item)}>Remove from cart</button>
+                                    <button id="removebookmark" onClick={(e) => removeItem(e, item) }>Remove from cart</button>
                                 </Accordion.Body>
                             </div>
                         </div>

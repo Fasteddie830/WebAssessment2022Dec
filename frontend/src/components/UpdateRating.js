@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
 import mean from "./Mymath";
+
 const UpdateRatings = ({rating}) => {
     //console.log(rating)
     
@@ -13,6 +14,8 @@ const UpdateRatings = ({rating}) => {
     //console.log(star)
     //console.log(item)
     //console.log(JSON.stringify(item))
+
+    //console.log(item);
 
     //rating.ratings.push(5)
     //console.log(item);
