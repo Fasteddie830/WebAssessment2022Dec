@@ -20,7 +20,7 @@ const FetchData = ({ }) => {
     //the incoming data then gets loaded into the react useState foods, by
     //setting it there with setFoods. 
     const fetchData = useCallback(() => {
-        const url = "http://localhost:3005/food";
+        const url = "https://dncookbook.onrender.com/";
         fetch(url)
             .then((response) => response.json())
             .then((incomingData) => {

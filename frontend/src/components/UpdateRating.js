@@ -31,7 +31,7 @@ const UpdateRatings = ({rating}) => {
     //console.log(star);
     //const [value, setValue] = useState();
     async function addRating() {
-        await fetch(`http://localhost:3005/updateOrder`, {
+        await fetch(`https://dncookbook.onrender.com/updateOrder`, {
             method: "POST",
             headers: {
                 Accept: "application/json, text/plain, * ",
