@@ -261,6 +261,14 @@ footer {
     align-items: center;
 }
 
+#ingredientsP{
+    font-weight: bold;
+}
+
+.hideMe{
+    text-align: center;
+}
+
 /* Mobile view adjustments */
 
 @media (max-width: 750px) {

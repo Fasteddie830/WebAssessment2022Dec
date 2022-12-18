@@ -13,7 +13,7 @@ import Rating from '@mui/material/Rating';
 
 export default function OrderSummary() {
     const [order, setOrder] = useContext(OrderContext);
-    
+ 
     //removebutton functions
 
     const removeItem = (e, item) => {
@@ -47,7 +47,7 @@ export default function OrderSummary() {
                                     <p className="card-text" >Rating:</p>
                                     <UpdateRatings rating={item}></UpdateRatings>
                                     <FetchData query={item.name}></FetchData>
-                                    <button id="removebookmark" onClick={(e) => removeItem(e, item) }>Remove from cart</button>
+                                    <button id="removebookmark" onClick={(e) => removeItem(e, item) }>Remove from Bookmarks</button>
                                 </Accordion.Body>
                             </div>
                         </div>

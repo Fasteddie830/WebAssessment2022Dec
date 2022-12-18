@@ -16,6 +16,8 @@ import mean from "./Mymath";
 //MenuItems takes in food 
 const MenuItems = ({ items }) => {
 
+    //To hide a paragraph
+    let isHidden = true;
 
     //Let stored. This part of the code is responsible for 2 things:
     //1. check if there are bookmarked items stored in the local storage
@@ -23,10 +25,12 @@ const MenuItems = ({ items }) => {
     //is the bookmarked food storage
     //2., if there are no bookmarked items in local storage, pass along an empty array
     //to selectedItems to be initialised. 
+
     let stored;
     if (localStorage.getItem('item') !== null) {
         stored = JSON.parse(localStorage.getItem('item'))
         console.log(stored)
+        isHidden = false;
     }
     else {
         stored = []
@@ -36,6 +40,7 @@ const MenuItems = ({ items }) => {
     //and setSelectedItems is the setter for it, which sets up the data into it. 
 
     const [selectedItems, setSelectedItems] = useState(stored);
+    
 
     //The button click function that selects items to be put into selectedItems
     const handleClick = (e, selectedItem) => {
@@ -96,17 +101,20 @@ const MenuItems = ({ items }) => {
             {/* This small section will display the required ingredients for the bookmarked 
             items separately from the bookmarks list as a shopping list. */}
             <div id="shoppingList">
-                <h2 id="shoppinglisth2">Shopping List </h2>
+                <h2 id="shoppinglisth2">Shopping List</h2>
+                <h2 hidden={!isHidden} className="hideMe">Open Recipes and Bookmark them using Bookmark Button to see required ingredients!</h2>
                 {selectedItems.map((item, index) => (
                     <div className="shoppingCard">
                         <div className="card">
-                            <h4>Ingredients Needed for {item.name}:</h4>
-                            <p>{item.ingredients}</p>
+                            {/* After feedback from family, implemented these changing <p> tags to inform users how does this section work */}
+                            
+                            <h4 style={{borderBottom: "2px dashed black"}}>Ingredients Needed for {item.name}:</h4>
+                            <p id="ingredientsP">{item.ingredients}</p>
                         </div>
                     </div>
 
                 ))}
-
+            <h5 hidden={isHidden} className="hideMe">When you have finished with the recipe, simply remove it from the bookmarks using the "Remove from Bookmarks" button after clicking the recipe name, to empty your shopping list!</h5>
             </div>
         </>
     );
