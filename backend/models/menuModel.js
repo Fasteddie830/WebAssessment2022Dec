@@ -1,9 +1,12 @@
 const nedb = require("nedb");
 
+//The menumodel takes care of the database. Here we are initialising the database with new data, or if the database exists, the code looks for it and loads it up.
+
+// getRandomArbitrary takes in a minimum number and a maximum number, and returns back a number between the two values.
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
-
+//getRandomTen just gives me back 10 random numbers, those are being used for "random user" ratings. 
 function getRandomTen() {
   let numberlist = []
   for (let i = 0; i < 10; i++) {
@@ -12,6 +15,7 @@ function getRandomTen() {
   return numberlist;
 }
 
+//create the db if one doesn't exists, otherwise load the existing one. 
 class Menu {
   constructor(menuFilePath) {
     console.log(menuFilePath);
@@ -24,12 +28,12 @@ class Menu {
     }
   }
 
+  //initialise the database with the food data 
   init() {
     this.menu.insert({
       id: "1",
       name: "Carrot cake",
       description: "home made here",
-      price: "2.50",
       category: "cake",
       ingredients: "175g light muscovado sugar 175ml sunflower oil, 3 large eggs lightly beaten, 140g grated carrot (about 3 medium),"
         + "100g raisins,  1 large orange zested,  175g self-raising flour,  1 tsp bicarbonate of soda,  1 tsp ground cinnamon,  ½ tsp grated nutmeg (freshly grated will give you the best flavour)",
@@ -48,7 +52,6 @@ class Menu {
       id: "2",
       name: "Soft-boiled eggs",
       description: "Fresh eggs",
-      price: "1",
       category: "snack",
       ingredients: "2 large free-range eggs at room temperature, toast to serve",
       recipe: "   \n STEP 1   \n Fill a medium sized saucepan with water and bring to a rolling boil.   \n STEP 2   \n Make sure your eggs aren't fridge cold. By having the eggs at room temperature, "
@@ -65,7 +68,6 @@ class Menu {
       id: "3",
       name: "Greek salad",
       description: "uses seasonal local produce",
-      price: "1.50",
       category: "side",
       ingredients: "4 large vine tomatoes cut into irregular wedges, 1 cucumber peeled deseeded then roughly chopped, ½ a red onion thinly sliced, 16 Kalamata olives, 4 tbsp Greek extra virgin olive oil",
       recipe: "Place 4 large vine tomatoes, cut into wedges, 1 peeled, deseeded and chopped cucumber, ½ a thinly sliced red onion, 16 Kalamata olives, and 4 tbsp Greek extra virgin olive oil in a large bowl.",
@@ -78,7 +80,6 @@ class Menu {
       id: "4",
       name: "Sticky spiced red cabbage",
       description: "100% free of monkey meat",
-      price: "2.00",
       category: "side",
       ingredients: "1 tbsp olive oil, 1 medium-size red cabbage quartered cored and shredded, 1 finger-size piece fresh root ginger finely chopped, 2 onions sliced, 1 tsp ground allspice,"
         + "1 tbsp mustard seed, 100g golden caster sugar, 150ml red wine vinegar",
@@ -94,7 +95,6 @@ class Menu {
       id: "5",
       name: "Chocolate cake",
       description: "happy birthday",
-      price: "2.50",
       category: "cake",
       ingredients: "200g golden caster sugar, 200g unsalted butter softened plus extra for the tins, 4 large eggs, 200g self-raising flour," +
         "2 tbsp cocoa powder, 1 tsp baking powder, ½ tsp vanilla extract, 2 tbsp milk",
@@ -117,7 +117,6 @@ class Menu {
       id: "6",
       name: "Broccoli soup",
       description: "Creamy and healty broccoli soup, no cream",
-      price: "1.50",
       category: "soup",
       ingredients: "1 large potato, diced, 1.2l chicken or vegetable stock, 400g broccoli chopped into florets",
       recipe: "Heat oven to 200C/180C fan/gas 6. Put the potato and stock in a saucepan and bring to the boil, turn down to simmer for 10 mins until the potato is tender," +
@@ -130,6 +129,7 @@ class Menu {
     });
   }
 
+  //return all entries into the console. 
   getAllEntries() {
     return new Promise((resolve, reject) => {
       this.menu.find({}, function (err, entries) {
@@ -164,6 +164,9 @@ class Menu {
     this.menu.find({}).exec(function (err, docs) { console.log(docs); });
     //console.log(this.db.find({dish: "Pizza"})) //testing
   } */
+
+
+  //function to update a dish, in this project it's only used to update the ratings, however this can be used for all other fields too. 
   updateRatings(id, name, description, price, _id, category, ingredients, recipe, serving, original, ratings, callback) {
 
     this.menu.update(

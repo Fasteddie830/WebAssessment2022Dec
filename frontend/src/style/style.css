@@ -1,3 +1,6 @@
+/* CSS file is pretty self-explanatory. I'm using a single file just separated by comments. Easier for me to take care of it
+and readability is not decreased if properly commented, however it saves me the headache of looking for the correct file.  */
+
 html,
 body {
     background-color: ivory;
@@ -5,8 +8,9 @@ body {
     height: 100%;
 }
 
-/* HTMLComponents */
+/* --------------------- HTMLComponents.js ---------------------*/
 
+/* Nav */
 header {
     background-color: rgba(0, 0, 0, .7);
     position: fixed;
@@ -35,6 +39,7 @@ header nav ul {
 
 header nav li {
     margin: 0 6px;
+    font-size: 1.3rem;
 }
 
 header a {
@@ -44,6 +49,15 @@ header a {
     cursor: pointer;
 }
 
+#logo{
+    height: auto;
+    width: auto;
+    max-width: 75px;
+    max-height: 75px;
+}
+
+/* Top Section */
+
 #top {
     background: gray;
     color: white;
@@ -52,8 +66,8 @@ header a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-image: url(https://images.pexels.com/photos/5645052/pexels-photo-5645052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
-    background-image: url(https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-image: url(https://images.pexels.com/photos/5645052/pexels-photo-5645052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    /* background-image: url(https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
     background-repeat: none;
     background-size: cover;
     min-height: 100vh;
@@ -62,7 +76,6 @@ header a {
 
 #top h1 {
     font-size: 60px;
-    margin-bottom: 15px;
 }
 
 #top h1,
@@ -76,6 +89,13 @@ header a {
     }
 }
 
+#snap{
+    display: flex;
+    bottom: 87px;
+    position: absolute;
+}
+
+/* --------------------- Search.tsx ---------------------*/
 /* SEARCH AND SEARCH BAR */
 .filter {
     align-items: center;
@@ -90,6 +110,7 @@ input {
     align-items: center;
     text-align: center;
     padding-top: 15px;
+    font-size: 25px;
 }
 
 #filter {
@@ -103,22 +124,37 @@ input {
     margin: auto;
     font-weight: bold;
 }
+#searchbar{
+    font-size: 1.2rem;
+}
 
 /* #search{
     box-shadow: 2px 5px rgba(0, 0, 0, 0.187);
 } */
 
 
-/* CARDS, ACCORDION ITEMS, MENU */
+
+/* --------------------- FetchData.js, OrderSummary.js, MenuItems.js ---------------------*/
+
+/* MenuItems top */
 
 
 #menuh2,
-#order {
+#order, #shoppinglisth2 {
     text-align: center;
+}
+
+#order, #shoppinglisth2{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    width: 90%;
+    font-size: 65px;
 }
 
 #menuh2 {
     padding: 30px 0px 30px 0px;
+    width: 100%;
+    font-size: 75px;
 }
 
 #menu {
@@ -130,6 +166,7 @@ input {
     justify-content: center;
 }
 
+/* Accordion */
 .accordion-item,
 .accordion {
     margin: auto;
@@ -137,15 +174,20 @@ input {
 
 .accordion {
     padding-top: 25px;
-    width: 90%;
+    width: 50%;
     margin: auto;
 }
 
 .accordion-item {
     margin: 15px 0px 15px 0px;
-
 }
 
+.accordion-body {
+    background-color: rgba(255, 255, 255, 0.75);
+    font-weight: bold;
+}
+
+/* Cards */
 
 .card-text {
     border-bottom: 2px dashed black;
@@ -175,15 +217,13 @@ input {
     border-bottom: 1px solid black; */
 }
 
+/* Buttons */
 #removebookmark,
 #addbookmark {
     font-size: 15px;
 }
 
-.accordion-body {
-    background-color: rgba(255, 255, 255, 0.75);
-    font-weight: bold;
-}
+
 
 #bookmarks {
     padding-top: 100px;
@@ -196,6 +236,20 @@ input {
     min-height: 100vh;
 }
 
+#shoppinglisth2{
+    margin: auto;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.shoppingCard{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+/* Footer */
 footer {
     background-color: #131622;
     color: white;
@@ -207,11 +261,35 @@ footer {
     align-items: center;
 }
 
+/* Mobile view adjustments */
+
 @media (max-width: 750px) {
+
+    #logo{
+        height: auto;
+        width: auto;
+        max-width: 60px;
+        max-height: 60px;
+    }
+    
+    header nav li{
+        font-size: 1.1rem
+    }
+
+    #order{
+        font-size: 50px
+    }
 
     .accordion-item,
     .accordion {
         width: 100%;
+    }
+
+    .shoppingCard{
+        width: 100%;
+    }
+    #filters{
+        font-size: 15px;
     }
 
 }

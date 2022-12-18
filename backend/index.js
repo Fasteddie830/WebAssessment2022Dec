@@ -1,3 +1,6 @@
+//backend app using express, cors, and body parser. routes are handled by the router, and the app is listening on port 3005
+//meaning localhost:3005
+
 const express = require("express");
 const app = express();
 

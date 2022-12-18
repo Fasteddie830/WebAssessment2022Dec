@@ -5,8 +5,7 @@ import "../style/style.css"
 const FetchData = ({ }) => {
     const [foods, setFoods] = useState([{
         id: "",
-        name: "carrot cake", //otherwise the list starts empty, giving an error
-        price: "", //carrot cake for the rescue
+        name: "carrot cake", //otherwise the list starts empty, giving an error //carrot cake for the rescue
         category: "",
     }]);
 
@@ -14,6 +13,12 @@ const FetchData = ({ }) => {
     //but leaving this in since it was an interesting problem, and a very, very
     //temporary duct tape type of fix. 
 
+
+    //fetchData connects to the backend server running on localhost:3005, and fetches
+    //the food items from /food 
+
+    //the incoming data then gets loaded into the react useState foods, by
+    //setting it there with setFoods. 
     const fetchData = useCallback(() => {
         const url = "http://localhost:3005/food";
         fetch(url)
@@ -42,7 +47,7 @@ const FetchData = ({ }) => {
     if (foods[0].id !== '') { 
         return (
             <div id="menu">
-                <h2 id="menuh2">Menu</h2>
+                <h2 id="menuh2">Recipes</h2>
                 <Search details={foods} />
             </div>
         );

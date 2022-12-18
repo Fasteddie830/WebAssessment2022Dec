@@ -1,7 +1,7 @@
 const menuDAO = require("../models/menuModel");
 const menu = new menuDAO({ filename: "menu.db", autoload: true, });
 
-
+//MVC part 3: controller, here are all the functions of the back-end will be called from and reacted to accordingly. 
 
 exports.newList = function (req, res) {
   menu.init();

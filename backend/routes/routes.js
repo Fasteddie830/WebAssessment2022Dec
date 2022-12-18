@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/controllers");
 
+//The router takes care of the different /sites the back-end webiste has.
+// /food and / returns the menu database, /updateOrder calls the function to update the ratings of a dish with an incoming entry in JSON format. 
+//new re-creates the database. 
+
 router.get("/", controller.listMenu);
 router.get("/food", controller.listMenu);
 router.post('/updateOrder', controller.updateRatings);

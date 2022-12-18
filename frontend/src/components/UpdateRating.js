@@ -3,6 +3,14 @@ import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
 import mean from "./Mymath";
 
+
+//updateratings much like menuitems, takes in the food objects from fetchdata, however this one looks through them and only 
+//caters for the ratings of each dish. The ratings can be changed by an imported star function
+//where users can click the star, and the number correlating to the star, e.g. 3 stars === 3, will be added to the
+//ratings of the dish, then it will be pushed into the back-end with a fetch request, and the entire dish will be 
+//updated with the new rating. 
+
+
 const UpdateRatings = ({rating}) => {
     //console.log(rating)
     
@@ -10,6 +18,7 @@ const UpdateRatings = ({rating}) => {
     const [star, setStar] = useState(rated);
     const [item, setItem] = useState(rating);
     const [value, setValue] = useState();
+    const [userRated, setUserRated] = useState(false);
 
     //console.log(star)
     //console.log(item)
@@ -36,8 +45,8 @@ const UpdateRatings = ({rating}) => {
     }; 
     return (
         <div>
-            <div>
-            <p className="card-text" >Rating: {mean(item.ratings)}, "rounded: {Math.round(mean(item.ratings))}"
+            <div> {/* take all the ratings, calculate the mean, and display it to two decimal numbers */}
+            <p className="card-text" >Rating: {mean(item.ratings).toFixed(2)}, "rounded: {Math.round(mean(item.ratings))}"
             <br></br>
             <Rating name="read-only" value={mean(item.ratings)} readOnly size="small" /></p>
                 <Typography component="legend">Rate our recipe: </Typography>
@@ -46,15 +55,19 @@ const UpdateRatings = ({rating}) => {
                     name="simple-controlled"
                     value={value}
                     defaultValue={0}
+                    readOnly={userRated}
                     onChange={(e) => {
-                        setStar(e.target.value)
-                        item.ratings.push(parseInt(star))
-                        setItem(item)
-                        addRating();
-                        setValue(e)
+                        setStar(e.target.value) //take the user rating as a number
+                        item.ratings.push(parseInt(star)) //add to the list of ratings
+                        setItem(item) //select the current item
+                        addRating(); //call the rating function
+                        setValue(e) //set the empty stars into the number the user entered
+                        setUserRated(!userRated) //don't allow users to rate multiple times
                         //value = {e.target.value}
                         
                     }}></Rating>
+                    {/* show this when users have given a rating */}
+                    <p hidden={!userRated}>Thank you for your feedback!</p>
             </div>
 
         </div>

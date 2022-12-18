@@ -1,7 +1,15 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Nutrition from "./Nutrition"
 
-const FetchData = ({query}) => {
+// Similarly to FetchData.Js, Fetchnutrition grabs data from an external server.
+// In this case, we are using an exrenal API from calorieninjas. From their database,
+// we can fetch all the nutritional information for a lot of food items
+
+
+
+const FetchNutrition = ({query}) => {
+
+    //set up the variables needed for us
     const [nutrition, setNutrition] = useState(
         {
             sugar_g: " ",
@@ -18,6 +26,10 @@ const FetchData = ({query}) => {
             carbohydrates_total_g: " ",
         },
     );
+
+        //Connect to calorieninjas api. The query part needs to be replaced
+        //by the name of the food item we want to query to get that specific
+        //food's nutritional values. 
     const fetchData = useCallback(() => {
         const url = 'https://calorieninjas.p.rapidapi.com/v1/nutrition?query='+query;
         //console.log(url);
@@ -35,11 +47,12 @@ const FetchData = ({query}) => {
                 setNutrition(incomingData.items[0]);
             });
     }, [query]);
-
+    //run fetch / fetch the data with the queried food item
     useEffect(() => {
         fetchData();
     }, [fetchData, query]);
 
+    //call Nutrition.js which has the template for the food items. 
     return (
         <div>
             <h2>Nutrition data</h2>
@@ -56,4 +69,4 @@ const FetchData = ({query}) => {
    
 }
 
-export default FetchData;
+export default FetchNutrition;

@@ -1,4 +1,9 @@
 import React from "react";
+
+//This file serves as a display element, Nutrition.js get's a single item, a name of a dish, and using the calorieninjas api,
+//get the corresponding nutritional information, separate them out and list them one by one. 
+
+
 const Nutrition = ({item}) => {
     return(
         <div>
