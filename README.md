@@ -30,3 +30,5 @@ easier to navigate for any changes to be made.
 For data storage, this website uses both local storage and a back-end one as well, and can interact with both fully well. Even an external API dataset is imported.
 A lot of small details like the favicon or website tab name has been changed and taken care of. 
 Not the best by any means, but there has been a lot of effort put into it. 
+
+All the changes made from the original design document have been made to better the look, feel, and ease of access for users, approved by family, especially little brother. After little brother's approval, I need no other justification for myself. 
