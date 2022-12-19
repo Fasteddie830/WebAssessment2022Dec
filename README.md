@@ -35,3 +35,7 @@ All the changes made from the original design document have been made to better 
 
 
 Live Version: https://dncookbookreact.onrender.com/
+
+--------IMPORTANT--------- It has come to my attention that the server shut's down after a while, so to start the back-end side too, open this link: 
+https://dncookbook.onrender.com/
+
