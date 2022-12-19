@@ -38,4 +38,6 @@ Live Version: https://dncookbookreact.onrender.com/
 
 --------IMPORTANT--------- It has come to my attention that the server shut's down after a while, so to start the back-end side too, open this link: 
 https://dncookbook.onrender.com/
+ 
+--------IMPORTANT 2--------- Wait nevermind, I forgot the website itself calls the back-end site to be loaded, so if data isn't present, just refresh the site
 
